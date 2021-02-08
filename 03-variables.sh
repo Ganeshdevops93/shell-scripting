@@ -18,3 +18,5 @@ FILE2=new.txt
 
 #cp $FILE1 $FILE2
 
+# If your data is having spaces then use quotes
+NAME=Welcome to DevOps
