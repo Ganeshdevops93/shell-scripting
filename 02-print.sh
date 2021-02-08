@@ -57,6 +57,6 @@ echo "Bye"
 
 # echo -e "e\[COL-CODEmMESSAGE\e[0m"
 
-echo -e "\e[0;31mWARNING!! THere is an error"
+echo -e "\e[31mWARNING!! THere is an error\e[0m"
 
 echo Bye
