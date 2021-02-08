@@ -22,4 +22,4 @@ FILE2=new.txt
 # If your data is having spaces then use quotes
 NAME="Welcome to DevOps"
 
-echo "Count of Apples = $COUNTno"
+echo "Count of Apples = ${COUNT}no"
