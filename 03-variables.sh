@@ -9,9 +9,10 @@ NAME=DEVOPS
 
 COUNT=2
 
-# Access the variable
+# Access the variable  $VAR_NAME / ${VAR_NAME}
 
 echo NAME=$NAME
+
 
 FILE1=sample.txt
 FILE2=new.txt
@@ -20,3 +21,5 @@ FILE2=new.txt
 
 # If your data is having spaces then use quotes
 NAME="Welcome to DevOps"
+
+echo "Count of Apples = $COUNTno"
