@@ -35,3 +35,5 @@ echo -e "Hello\t\t\tWorld"
 #   Cyan          36
 
 echo -e "\e[31mWARNING!! THere is an error"
+
+echo "Bye"
