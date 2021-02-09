@@ -42,3 +42,10 @@ echo "Welcome, Good Morning, Today date is 2021-02-08"
 
 DATE=$(date +%F)
 echo "Welcome, Good Morning, Today date is $DATE"
+
+## Arithmetic Substitution
+
+ADD=$((2+3+4+5+6))
+CALC=$((2+3-4*5+6*2/7))
+
+echo ADD = $ADD
