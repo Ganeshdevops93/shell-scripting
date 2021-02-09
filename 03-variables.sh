@@ -7,6 +7,8 @@ NAME=DEVOPS
 
 # Usually other scripting languages will have data types, But shell by default will not have any data types.. All the data is a string for shell.
 
+# Variable names can have character a-z, A-Z, 0-9, _
+
 COUNT=2
 
 # Access the variable  $VAR_NAME / ${VAR_NAME}
@@ -23,3 +25,20 @@ FILE2=new.txt
 NAME="Welcome to DevOps"
 
 echo "Count of Apples = ${COUNT}no"
+
+
+# ----------------------
+
+# Sometimes we need variable data dynamically
+
+## Ex:
+
+echo "Welcome, Good Morning, Today date is 2021-02-08"
+
+# Above statement makes it wrong because of static date
+
+# Command Substitution
+# VAR=$(COMMAND)
+
+DATE=$(date +%F)
+echo "Welcome, Good Morning, Today date is $DATE"
