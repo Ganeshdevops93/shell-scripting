@@ -49,3 +49,5 @@ ADD=$((2+3+4+5+6))
 CALC=$((2+3-4*5+6*2/7))
 
 echo ADD = $ADD
+
+echo "Value of a = $a"
