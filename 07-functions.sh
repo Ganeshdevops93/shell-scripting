@@ -8,6 +8,7 @@ sample() {
   echo Hello from sample function
   echo a = $a
   b=20
+  echo First Argument = $1
 }
 
 #Way2
