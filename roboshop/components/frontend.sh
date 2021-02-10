@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# -e
 
 yum install nginx -y
 false
