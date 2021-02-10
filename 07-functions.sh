@@ -4,6 +4,7 @@
 
 # Way1
 sample() {
+  a=200
   echo Hello from sample function
   echo a = $a
   b=20
@@ -20,4 +21,6 @@ function sample1() {
 a=10
 sample
 sample1
+b=100
 echo b = $b
+
