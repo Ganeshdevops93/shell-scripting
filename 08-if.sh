@@ -7,5 +7,5 @@ fi
 read -p 'Enter your Name: ' name
 
 if [ -z "$name" ]; then
-  echo Variable a is empty
+  echo Hey, You have not entered any input
 fi
