@@ -4,6 +4,8 @@ if [ "$USER" != "root" ]; then
   echo Hey, You are not a root user
 fi
 
-if [ -z "$a" ]; then
+read -p 'Enter your Name: ' name
+
+if [ -z "$name" ]; then
   echo Variable a is empty
-fi 
+fi
