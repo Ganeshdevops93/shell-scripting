@@ -8,4 +8,6 @@ read -p 'Enter your Name: ' name
 
 if [ -z "$name" ]; then
   echo Hey, You have not entered any input
+else
+  Hey $name, Welcome
 fi
