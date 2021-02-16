@@ -29,6 +29,8 @@ Print "Update SystemD Script for Shipping" 'sed -i -e "s/CARTENDPOINT/cart-ss.de
 sed -i -e "s/CARTENDPOINT/cart-ss.devopsb54.tk/" -e "s/DBHOST/mysql-ss.devopsb54.tk/" /home/roboshop/shipping/systemd.service
 Stat $?
 
+chown roboshop:roboshop /home/roboshop -R
+
 Print "Start Shipping Service" "mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service && systemctl daemon-reload && systemctl enable shipping && systemctl restart shipping"
 mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service && systemctl daemon-reload && systemctl enable shipping && systemctl restart shipping
 Stat $?
