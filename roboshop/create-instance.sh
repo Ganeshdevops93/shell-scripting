@@ -1,5 +1,7 @@
 #!/bin/bash
 
+sudo yum install gettext -y &>/dev/null
+
 component=$1
 
 if [ -z "${component}" ]; then
