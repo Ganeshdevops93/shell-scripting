@@ -26,7 +26,9 @@ cd /home/roboshop/payment  && pip3 install -r requirements.txt
 Stat $?
 exit
 
-Update the roboshop user and group id in payment.ini file.
+USER_ID=$(id -u roboshop)
+GROUP_ID=$(id -g roboshop)
+sed -i -e "/^uid/ c uid=${USE}"
 
 Setup the service
 chown roboshop:roboshop /home/roboshop -R
