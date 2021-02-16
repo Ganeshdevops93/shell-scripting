@@ -18,7 +18,7 @@ curl -s -L -o /tmp/shipping.zip "https://dev.azure.com/DevOps-Batches/f635c088-1
 Stat $?
 
 Print "Exctract Shipping COde" "mkdir /home/roboshop/shipping && cd /home/roboshop/shipping && unzip /tmp/shipping.zip"
-mkdir /home/roboshop/shipping && cd /home/roboshop/shipping && unzip /tmp/shipping.zip
+mkdir -p /home/roboshop/shipping && cd /home/roboshop/shipping && unzip /tmp/shipping.zip
 Stat $?
 
 Print "Maven Compile Code" "mvn clean package && mv target/shipping-1.0.jar shipping.jar"
