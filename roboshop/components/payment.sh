@@ -24,15 +24,20 @@ Stat $?
 Print "Install Python Dependencies" "cd /home/roboshop/payment  && pip3 install -r requirements.txt"
 cd /home/roboshop/payment  && pip3 install -r requirements.txt
 Stat $?
-exit
 
+Print "Update User details in Payment script" 'sed -i -e "/^uid/ c uid=${USER_ID}" -e "/^gid/ c gid=${GROUP_ID}" /home/roboshop/payment/payment.ini'
 USER_ID=$(id -u roboshop)
 GROUP_ID=$(id -g roboshop)
-sed -i -e "/^uid/ c uid=${USE}"
+sed -i -e "/^uid/ c uid=${USER_ID}" -e "/^gid/ c gid=${GROUP_ID}" /home/roboshop/payment/payment.ini
+Stat $?
 
-Setup the service
 chown roboshop:roboshop /home/roboshop -R
-# mv /home/roboshop/payment/systemd.service /etc/systemd/system/payment.service
-# systemctl daemon-reload
-# systemctl enable payment
-# systemctl start payment
+
+Print "Update SystemD Script for Payment" 'sed -i -e "s/CARTHOST/cart-ss.devopsb54.tk/" -e "s/USERHOST/user-ss.devopsb54.tk/" -e "s/AMQPHOST/rabbitmq-ss.devopsb54.tk/" /home/roboshop/payment/systemd.service '
+sed -i -e "s/CARTHOST/cart-ss.devopsb54.tk/" -e "s/USERHOST/user-ss.devopsb54.tk/" -e "s/AMQPHOST/rabbitmq-ss.devopsb54.tk/" /home/roboshop/payment/systemd.service
+Stat $?
+
+Print "Start Payment Service" "mv /home/roboshop/payment/systemd.service  /etc/systemd/system/payment.service && systemctl daemon-reload && systemctl enable payment && systemctl start payment"
+mv /home/roboshop/payment/systemd.service  /etc/systemd/system/payment.service && systemctl daemon-reload && systemctl enable payment && systemctl start payment
+Stat $?
+
