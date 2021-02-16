@@ -25,12 +25,15 @@ Print "Grab Default MySQL Password" "grep temp /var/log/mysqld.log"
 DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
 Stat $?
 
-echo DEFAULT_PASSWORD = $DEFAULT_PASSWORD
+echo "show databases;" ; mysql -uroot -ppassword &>/dev/null
+if [ $? -ne 0 ]; then
+  Print "Reset MySQL Password" ""
+  mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
+  uninstall plugin validate_password;
+  ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+  EOF
+  Stat $?
+fi
 
-Print "Reset MySQL Password" ""
-mysql --connect-expired-password -uroot -p"${DEFAULT_PASSWORD}" <<EOF
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'Default_RoboShop*999';
-uninstall plugin validate_password;
-ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
-EOF
-Stat $?
+
