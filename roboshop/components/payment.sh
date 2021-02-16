@@ -17,14 +17,14 @@ curl -L -s -o /tmp/payment.zip "https://dev.azure.com/DevOps-Batches/f635c088-10
 Stat $?
 
 Print "Extracting Payment Code" "mkdir -p /home/roboshop/payment && cd /home/roboshop/payment && unzip /tmp/payment.zip"
-unzip /tmp/payment.zip
+mkdir -p /home/roboshop/payment && cd /home/roboshop/payment && unzip /tmp/payment.zip
 Stat $?
 
 
 Print "Install Python Dependencies" "cd /home/roboshop/payment  && pip3 install -r requirements.txt"
 cd /home/roboshop/payment  && pip3 install -r requirements.txt
-Print $?
-exit 
+Stat $?
+exit
 
 Update the roboshop user and group id in payment.ini file.
 
