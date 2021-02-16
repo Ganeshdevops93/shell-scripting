@@ -26,3 +26,10 @@ DEFAULT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $
 Stat $?
 
 echo DEFAULT_PASSWORD = $DEFAULT_PASSWORD
+
+Print "Reset MySQL Password" ""
+mysql -uroot -p"${DEFAULT_PASSWORD}" <<EOF
+uninstall plugin validate_password;
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';
+EOF
+Stat $?
