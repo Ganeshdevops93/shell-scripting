@@ -17,7 +17,7 @@ curl -L -s -o /tmp/payment.zip "https://dev.azure.com/DevOps-Batches/f635c088-10
 Stat $?
 
 Print "Extracting Payment Code" "mkdir -p /home/roboshop/payment && cd /home/roboshop/payment && unzip /tmp/payment.zip"
-mkdir -p /home/roboshop/payment && cd /home/roboshop/payment && unzip /tmp/payment.zip
+mkdir -p /home/roboshop/payment && cd /home/roboshop/payment && unzip -o /tmp/payment.zip
 Stat $?
 
 
