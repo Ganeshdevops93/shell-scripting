@@ -7,7 +7,7 @@ CHECK() {
 #  fi
   if [ "$1" == "all" ]; then
     for compoent in cart catalogue user shipping payment mongodb redis rabbitmq mysql frontend ; do
-      echo "Installing $1 Component"
+      echo "Installing $compoent Component"
     done
     exit 0
   fi
