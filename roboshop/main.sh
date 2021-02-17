@@ -5,6 +5,9 @@ CHECK() {
     echo "Given Input does not have a script"
     exit 1
   fi
+  if [ "$1" == "all" ]; then
+
+  fi
   echo "Installing $1 Component"
   exit 0
 }
