@@ -11,9 +11,8 @@ case $1 in
   rabbitmq)   sh components/rabbitmq.sh ;;
   mysql)      sh components/mysql.sh ;;
   frontend)   sh components/frontend.sh ;;
-  *)  echo -e "Usage: Invalid Input\eInputs allowed are cart,catalogue,.........."
+  *)  echo -e "Usage: Invalid Input\nInputs allowed are cart,catalogue,.........."
       exit 1
       ;;
 esac
 
-      
