@@ -5,6 +5,8 @@ CHECK() {
     echo "Given Input does not have a script"
     exit 1
   fi
+  echo "Installing $1 Component"
+  exit 0
 }
 
 case $1 in
@@ -19,6 +21,7 @@ case $1 in
   mysql)      CHECK $1; sh components/mysql.sh ;;
   frontend)   CHECK $1; sh components/frontend.sh ;;
   backend)    CHECK $1; sh components/backend.sh ;;
+  all)        CHECK $1; sh components/all.sh ;;
   *)  echo -e "\e[1;31mUsage: Invalid Input\nInputs allowed are cart,catalogue,..........\e[0m"
       exit 1
       ;;
