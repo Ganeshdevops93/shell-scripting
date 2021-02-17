@@ -8,6 +8,7 @@ CHECK() {
   if [ "$1" == "all" ]; then
     for compoent in cart catalogue user shipping payment mongodb redis rabbitmq mysql frontend ; do
       echo "Installing $compoent Component"
+      sleep 1
     done
     exit 0
   fi
