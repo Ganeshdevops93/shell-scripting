@@ -1,10 +1,10 @@
 #!/bin/bash
 
 CHECK() {
-  if [ ! -f components/$1.sh ]; then
-    echo "Given Input does not have a script"
-    exit 1
-  fi
+#  if [ ! -f components/$1.sh ]; then
+#    echo "Given Input does not have a script"
+#    exit 1
+#  fi
   if [ "$1" == "all" ]; then
     for compoent in cart catalogue user shipping payment mongodb redis rabbitmq mysql frontend ; do
       echo "Installing $1 Component"
