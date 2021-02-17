@@ -18,6 +18,7 @@ case $1 in
   rabbitmq)   CHECK $1; sh components/rabbitmq.sh ;;
   mysql)      CHECK $1; sh components/mysql.sh ;;
   frontend)   CHECK $1; sh components/frontend.sh ;;
+  backend)    CHECK $1; sh components/backend.sh ;;
   *)  echo -e "\e[1;31mUsage: Invalid Input\nInputs allowed are cart,catalogue,..........\e[0m"
       exit 1
       ;;
