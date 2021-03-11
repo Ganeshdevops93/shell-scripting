@@ -18,8 +18,8 @@ curl -s -L -o /tmp/cart.zip https://github.com/roboshop-devops-project/catalogue
 
 Stat $?
 
-Print  "Extract Cart Component Code" "rm -rf /home/roboshop/cart && cd /home/roboshop && unzip /tmp/cart.zip && cd /home/roboshop/cart"
-rm -rf /home/roboshop/cart && cd /home/roboshop && unzip /tmp/cart.zip && cd /home/roboshop/cart
+Print  "Extract Cart Component Code" "rm -rf /home/roboshop/cart && cd /home/roboshop && unzip /tmp/cart.zip && mv /home/roboshop/cart-main /home/roboshop/cart && cd /home/roboshop/cart"
+rm -rf /home/roboshop/cart && cd /home/roboshop && unzip /tmp/cart.zip && mv /home/roboshop/cart-main /home/roboshop/cart && cd /home/roboshop/cart
 Stat $?
 
 Print "Install NOdeJS Dependencies" "npm install"
