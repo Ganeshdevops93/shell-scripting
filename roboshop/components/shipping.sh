@@ -22,7 +22,7 @@ rm -rf /home/roboshop/shipping && cd /home/roboshop && unzip /tmp/shipping.zip &
 Stat $?
 
 Print "Maven Compile Code" "mvn clean package && mv target/shipping-1.0.jar shipping.jar"
-pwd && echo && echo && mvn clean package && mv target/shipping-1.0.jar shipping.jar
+mvn clean package && mv target/shipping-1.0.jar shipping.jar
 Stat $?
 
 Print "Update SystemD Script for Shipping" 'sed -i -e "s/CARTENDPOINT/cart-ss.devopsb54.tk/" -e "s/DBHOST/mysql-ss.devopsb54.tk/" /home/roboshop/shipping/systemd.service'
