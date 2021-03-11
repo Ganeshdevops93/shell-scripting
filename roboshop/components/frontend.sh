@@ -20,7 +20,7 @@ rm -rf *
 Stat $?
 
 Print "Extract RoboShop Frontend Docs" "unzip /tmp/frontend.zip"
-unzip /tmp/frontend.zip && mv static/* . && rm -rf static README.md
+unzip /tmp/frontend.zip && mv frontend-main/* . && mv static/* . && rm -rf static README.md frontend-main
 Stat $?
 
 Print "Setup Nginx Config for RoboShop" "mv localhost.conf /etc/nginx/default.d/roboshop.conf"
