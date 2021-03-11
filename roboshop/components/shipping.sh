@@ -18,7 +18,7 @@ curl -s -L -o /tmp/shipping.zip "https://github.com/roboshop-devops-project/ship
 Stat $?
 
 Print "Extract Shipping COde" "mkdir /home/roboshop/shipping && cd /home/roboshop && unzip /tmp/shipping.zip && mv shipping-main shipping && cd shipping"
-mkdir /home/roboshop/shipping && cd /home/roboshop && unzip /tmp/shipping.zip && mv shipping-main shipping && cd shipping
+cd /home/roboshop && unzip /tmp/shipping.zip && mv shipping-main shipping && cd shipping
 Stat $?
 
 Print "Maven Compile Code" "mvn clean package && mv target/shipping-1.0.jar shipping.jar"
