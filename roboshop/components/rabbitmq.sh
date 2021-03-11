@@ -6,7 +6,7 @@ source components/common.sh
 
 yum list installed | grep esl-erlang
 if [ $? -ne 0 ]; then
-  Print "Install ErLang" "yum install https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm -y"
+  Print "Install ErLang" "yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erlang-23.2.6-1.el7.x86_64.rpm -y"
   yum install https://packages.erlang-solutions.com/erlang/rpm/centos/7/x86_64/esl-erlang_22.2.1-1~centos~7_amd64.rpm -y
   Stat $?
 fi
